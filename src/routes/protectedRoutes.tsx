@@ -1,8 +1,8 @@
 import { MainLayout } from "@/components/Layout";
 import { lazyImport } from "@/utils/lazyImport";
+import AuthOutlet from "@auth-kit/react-router/AuthOutlet";
 import { Suspense } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import AuthOutlet from "@auth-kit/react-router/AuthOutlet";
 
 const { Dashboard } = lazyImport(
 	() => import("@/features/dashboard"),
