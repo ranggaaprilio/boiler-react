@@ -2,6 +2,7 @@ import { MainLayout } from "@/components/Layout";
 import { lazyImport } from "@/utils/lazyImport";
 import { Suspense } from "react";
 import { Navigate, Outlet } from "react-router-dom";
+import AuthOutlet from "@auth-kit/react-router/AuthOutlet";
 
 const { Dashboard } = lazyImport(
 	() => import("@/features/dashboard"),
@@ -18,7 +19,7 @@ const App = () => {
 					</div>
 				}
 			>
-				<Outlet />
+				<AuthOutlet fallbackPath="/auth/login" />
 			</Suspense>
 		</MainLayout>
 	);
@@ -29,8 +30,7 @@ export const protectedRoutes = [
 		path: "/app",
 		element: <App />,
 		children: [
-			{ path: "/dashboard", element: <Dashboard /> },
-			{ path: "/", element: <Dashboard /> },
+			{ path: "", element: <Dashboard /> },
 			{ path: "*", element: <Navigate to="." /> },
 		],
 	},
