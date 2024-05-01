@@ -1,0 +1,41 @@
+{
+	"name": "react-setup",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"lint": "biome lint --apply ./src",
+		"format": "biome format --write ./src",
+		"format:lint": "biome check --apply ./src",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@auth-kit/react-router": "^3.1.3",
+		"@tanstack/react-query": "^5.32.1",
+		"axios": "^1.6.8",
+		"react": "^18.2.0",
+		"react-auth-kit": "^3.1.3",
+		"react-dom": "^18.2.0",
+		"react-error-boundary": "^4.0.13",
+		"react-helmet-async": "^2.0.4",
+		"react-query": "^3.39.3",
+		"react-router-dom": "^6.23.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.7.2",
+		"@types/node": "^20.12.7",
+		"@types/react": "^18.2.66",
+		"@types/react-dom": "^18.2.22",
+		"@typescript-eslint/eslint-plugin": "^7.2.0",
+		"@typescript-eslint/parser": "^7.2.0",
+		"@vitejs/plugin-react-swc": "^3.5.0",
+		"eslint": "^8.57.0",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.4.6",
+		"typescript": "^5.2.2",
+		"vite": "^5.2.0"
+	},
+	"packageManager": "yarn@4.1.1"
+}
