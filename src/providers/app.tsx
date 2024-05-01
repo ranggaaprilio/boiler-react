@@ -2,19 +2,20 @@ import store from "@/lib/auth";
 import { queryClient } from "@/lib/react-query";
 import * as React from "react";
 import AuthProvider from "react-auth-kit";
-import { ErrorBoundary } from "react-error-boundary";
+import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 import { HelmetProvider } from "react-helmet-async";
 import { QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter as Router } from "react-router-dom";
 
-const ErrorFallback = () => {
+const ErrorFallback = ({ error }: FallbackProps) => {
+	console.error(error);
 	return (
 		<div
 			className="text-red-500 w-screen h-screen flex flex-col justify-center items-center"
 			role="alert"
 		>
-			<h2 className="text-lg font-semibold">Ooops, something went wrong :( </h2>
+			<h2 className="text-lg font-semibold">Ooops, something went wrong :(</h2>
 			<button
 				className="mt-4"
 				onClick={() => window.location.assign(window.location.origin)}
